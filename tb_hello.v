@@ -1,65 +1,50 @@
-// --------------------------------------------------------------------
-// >>>>>>>>>>>>>>>>>>>>>>>>> COPYRIGHT NOTICE <<<<<<<<<<<<<<<<<<<<<<<<<
-// --------------------------------------------------------------------
-// Copyright (c) 2019 by UCSD CSE 140L
-// --------------------------------------------------------------------
 //
-// Permission:
+// tb_hello
+// Lab1 test bench
+// CSE140L Spring 2019
 //
-//   This code for use in UCSD CSE 140L.
-//   It is synthesisable for Lattice iCEstick 40HX.  
+// Starter code
+//   Bryan Chin
+//   Lih-Feng Tsaur
 //
-// Disclaimer:
+// Author:
 //
-//   This Verilog source code is intended as a design reference
-//   which illustrates how these types of functions can be implemented.
-//   It is the user's responsibility to verify their design for
-//   consistency and functionality through the use of formal
-//   verification methods.  
+
+`timescale 1ns/100ps
+   
 //
-// --------------------------------------------------------------------
-//           
-//                     Lih-Feng Tsaur
-//                     UCSD CSE Department
-//                     9500 Gilman Dr, La Jolla, CA 92093
-//                     U.S.A
+// Lab1 testbench
+// runs some basic tests on Lab1_hello
 //
-// --------------------------------------------------------------------
-//
-// Revision History : 0.0
-`timescale 1ns/1ns
+module tb_hello;
 
-module tb_hello ;
-
-
-reg a;
-reg b;
-
-initial begin
-   #10
-   $display ( "Hello World by YOUR OWN NAME" );
-   #500;	
-	
-   $finish;
-end
-
-initial begin
-   $display ( "Goodbye Now" );
-	$monitor($time, "  a=%d  b=%d", a, b);
-end
-
-
-initial begin
-   a<=0;
-   b<=0;
-   #10;
-   a<=1;
-   b<=1;
+   wire c_a_and_b;
+   reg 	tb_a;
+   reg 	tb_b;
+   
+   initial begin
+      tb_a <= 0;
+      tb_b <= 0;
+      #20;
+      tb_a <= 1;
+      tb_b <= 0;
+      #20;
+      $finish;
    end
 
-wire c_a_and_b;
+   initial begin
+      #20;
+      $display("Hello There YOURNAME HERE");
+   end
 
-Lab1_hello Lab1_hello(a, b, c_a_and_b);
+   initial begin
+      $display("GoodBye!!!");
+   end
+   
+   
+   Lab1_hello Lab1_hello(.a(tb_a), .b(tb_b), .c_a_and_b(c_a_and_b));
 
-endmodule // End of Module hello_world
-
+endmodule
+      
+      
+      
