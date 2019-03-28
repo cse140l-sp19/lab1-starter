@@ -18,7 +18,7 @@
 //
 module tb_hello;
 
-   wire c_a_and_b;
+   wire L1_c_a_and_b;
    reg 	tb_a;
    reg 	tb_b;
    
@@ -42,7 +42,7 @@ module tb_hello;
    end
    
    
-   Lab1_hello Lab1_hello(.a(tb_a), .b(tb_b), .c_a_and_b(c_a_and_b));
+   Lab1_hello Lab1_hello(.tb_a(tb_a), .tb_b(tb_b), .L1_c_a_and_b(L1_c_a_and_b));
 
 endmodule
       

@@ -9,8 +9,8 @@
 // Author:
 //
 
-module Lab1_hello(input a, input b, output c_a_and_b);
+module Lab1_hello(input tb_a, input tb_b, output L1_c_a_and_b);
 
-   assign c_a_and_b = a & b;
+   assign L1_c_a_and_b = a & b;
 
 endmodule
