@@ -9,8 +9,10 @@
 // Author:
 //
 
-module Lab1_hello(input tb_a, input tb_b, output L1_c_a_and_b);
+module Lab1_hello(input tb_a, input tb_b, input tb_c, output L1_andOut);
 
-   assign L1_c_a_and_b = a & b;
+   //Example boolean operation
+   assign L1_andOut = tb_a & tb_b & tb_c;
+   
 
 endmodule

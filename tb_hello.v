@@ -10,7 +10,7 @@
 // Author:
 //
 
-`timescale 1ns/100ps
+`timescale 1ns/1ns
    
 //
 // Lab1 testbench
@@ -18,16 +18,19 @@
 //
 module tb_hello;
 
-   wire L1_c_a_and_b;
+   wire L1_andOut;
    reg 	tb_a;
    reg 	tb_b;
+   reg  tb_c;
    
    initial begin
       tb_a <= 0;
       tb_b <= 0;
+      tb_c <= 0;
       #20;
-      tb_a <= 1;
+      tb_a <= 0;
       tb_b <= 0;
+      tb_c <= 1;
       #20;
       $finish;
    end
@@ -42,7 +45,7 @@ module tb_hello;
    end
    
    
-   Lab1_hello Lab1_hello(.tb_a(tb_a), .tb_b(tb_b), .L1_c_a_and_b(L1_c_a_and_b));
+   Lab1_hello Lab1_hello(.tb_a(tb_a), .tb_b(tb_b), .tb_c(tb_c), .L1_andOut(L1_andOut));
 
 endmodule
       
